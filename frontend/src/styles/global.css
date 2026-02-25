@@ -1,0 +1,164 @@
+:root {
+  --primary: #075e54;
+  --secondary: #128c7e;
+  --light-green: #25d366;
+  --chat-bg: #ece5dd;
+  --white: #ffffff;
+  --gray: #f0f0f0;
+  --dark: #1f1f1f;
+}
+
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--chat-bg);
+}
+
+/* ================= BACKGROUND WRAPPER ================= */
+
+.auth-bg {
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* opacity control */
+}
+
+/* ================= CARD STYLE ================= */
+
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ================= INPUT STYLE ================= */
+
+.input-group-text {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(18, 140, 126, 0.2);
+}
+
+/* ================= BUTTON STYLE ================= */
+
+/* ================= AUTH BUTTON STYLE ================= */
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s ease;
+  z-index: 1;
+}
+
+/* Radial Hover Effect */
+.auth-card button::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: 0;
+}
+
+.auth-card button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.auth-card button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+/* ================= TOAST CUSTOM ================= */
+
+.Toastify__toast--success {
+  background: var(--secondary);
+  color: #FFFFFF;
+}
+
+.Toastify__toast--error {
+  background: #e74c3c;
+    color: #FFFFFF;
+
+}
+
+.Toastify__toast--info {
+  background: var(--primary);
+  color: #FFFFFF;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .auth-card {
+    margin: 20px;
+    padding: 25px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 20px;
+  }
+
+  .form-control {
+    font-size: 14px;
+  }
+}
