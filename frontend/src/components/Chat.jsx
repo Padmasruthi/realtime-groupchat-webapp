@@ -63,7 +63,10 @@ function Chat() {
     const msgData = {
       sender: user.name,
       text: message,
-      time: new Date().toLocaleTimeString(),
+      time: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
     };
 
     socket.emit("send_message", msgData);
@@ -132,11 +135,10 @@ function Chat() {
               {messages.map((msg, index) => (
                 <div
                   key={index}
-                  className={`d-flex mb-2 ${
-                    msg.sender === user.name
+                  className={`d-flex mb-2 ${msg.sender === user.name
                       ? "justify-content-end"
                       : "justify-content-start"
-                  }`}
+                    }`}
                 >
                   <div
                     style={{

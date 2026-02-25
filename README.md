@@ -1,70 +1,252 @@
-# Getting Started with Create React App
+# 🚀 Real-Time Group Chat Application (MERN + Socket.IO)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack real-time group chat application built using the MERN stack (MongoDB, Express, React, Node.js) with Socket.IO integration for live messaging.
 
-## Available Scripts
+This application allows users to register, login securely using JWT authentication, and participate in a real-time group chat that activates when 3 users join.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌐 Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🔗 Frontend (Vercel): https://realtime-groupchat-webapp-r4o5.vercel.app
+🔗 Backend API (Render): https://realtime-groupchat-webapp.onrender.com
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📌 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔐 Authentication
+- User Registration
+- User Login
+- JWT-based Authentication
+- Protected Routes
 
-### `npm run build`
+### 💬 Real-Time Chat
+- Real-time messaging using Socket.IO
+- Group chat room ("general")
+- Live user count
+- Chat activation when 3 users join
+- Broadcast messages instantly
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🎨 UI/UX
+- Responsive design
+- Toast notifications
+- Password visibility toggle
+- Clean and modern layout
+- Background image styling
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🚀 Deployment
+- Frontend deployed on Vercel
+- Backend deployed on Render
+- MongoDB Atlas cloud database
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠 Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🖥 Frontend
+- React.js
+- React Router DOM
+- Axios
+- Socket.IO Client
+- React Toastify
+- React Icons
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### ⚙️ Backend
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+- JWT (JSON Web Token)
+- Socket.IO
+- CORS
+- dotenv
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### ☁️ Deployment
+- Vercel (Frontend)
+- Render (Backend)
+- MongoDB Atlas (Database)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📂 Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+groupchat-app/
+│
+├── backend/
+│   ├── controllers/
+│   │   └── authController.js
+│   ├── middleware/
+│   │   └── authMiddleware.js
+│   ├── models/
+│   │   └── user.js
+│   ├── routes/
+│   │   └── authRoutes.js
+|   |   └── chatRoutes.js
+│   └── server.js
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── styles/
+│   │   ├── assets/
+│   │   └── utils/
+│   └── package.json
+│
+└── README.md
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## ⚙️ Installation & Local Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 1️⃣ Clone the Repository
 
-### Analyzing the Bundle Size
+```bash
+git clone https://github.com/Padmasruthi/realtime-groupchat-webapp.git
+cd realtime-groupchat
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🔧 Backend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+cd backend
+npm install
+```
 
-### Advanced Configuration
+### Create `.env` file inside backend folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+PORT=5000
+MONGO_URI=mongodb+srv://chatuser:chatpassword123@cluster0.96r4pqg.mongodb.net/realtimeGroupchat?appName=Cluster0
+JWT_SECRET=supersecretkey
+CLIENT_URL=https://realtime-groupchat-webapp-r4o5.vercel.app
+```
 
-### Deployment
+### Run Backend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm start
+```
 
-### `npm run build` fails to minify
+Server will run at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+http://localhost:5000
+```
+
+---
+
+## 🎨 Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+Frontend runs at:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🔐 API Endpoints
+
+### Authentication
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/auth/register | Register new user |
+| POST | /api/auth/login | Login user |
+
+---
+
+## 🔌 Socket Events
+
+### Client → Server
+- `joinGeneral`
+- `sendMessage`
+
+### Server → Client
+- `receiveMessage`
+- `userCount`
+- `chatActivated`
+
+---
+
+## 🧠 Application Logic
+
+- Users join the "general" room.
+- The server tracks joined users.
+- When 3 users join:
+  - `chatActivated` event is emitted.
+- Messages are broadcast in real-time.
+---
+
+## 🔐 Security
+
+- Password hashing using bcrypt
+- JWT token generation on login
+- Protected routes using middleware
+- Environment variables for secrets
+
+---
+
+## 🌟 Future Improvements
+
+- Private chat rooms
+- Message persistence with timestamps
+- Store chat history in database
+- User avatars
+- Online/offline status
+- Message reactions
+- Admin controls
+- Rate limiting & validation
+
+---
+
+## 🧪 Testing the App
+
+1. Open 3 different browsers or devices.
+2. Register/login with 3 users.
+3. Join general chat.
+4. Once 3 users join → chat activates.
+5. Send messages in real-time.
+---
+
+## 📈 What I Learned
+
+- Real-time communication using Socket.IO
+- JWT authentication flow
+- Protected API routes
+- Full-stack deployment
+- Environment variable management
+- Debugging CORS & production issues
+- Handling deployment errors (404, EADDRINUSE, etc.)
+
+---
+
+## 👨‍💻 Author
+
+Name: Padmasruthi  
+GitHub: https://github.com/Padmasruthi
+LinkedIn: https://www.linkedin.com/in/padmasruthi-h-9394022b5/ 
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, consider giving it a ⭐ on GitHub!
+
+---
+
+## 📜 License
+
+This project is open-source and available under the MIT License.
